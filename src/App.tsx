@@ -1,12 +1,14 @@
 import React from 'react';
-import Counter from "./components/Counter";
 import {Provider} from "react-redux";
 import store from "./redux/store";
+import Input from "./components/Input/Input";
+import List from "./components/List/List";
 
 function App() {
     return (
         <Provider store={store}>
-            <Counter/>
+            <Input />
+            <List />
         </Provider>
     );
 }
