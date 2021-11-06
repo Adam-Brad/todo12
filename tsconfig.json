@@ -19,11 +19,11 @@
     "noEmit": true,
     "jsx": "react",
     "baseUrl": "src",
-    "types": ["cypress"]
+    "types": []
   },
-  "include": [
-    "src",
-    "../../node_modules/cypress",
-    "cypress/*/*.ts"
+  "include": ["src/**/*"],
+
+  "exclude": [
+    "**/*.spec.ts"
   ]
 }

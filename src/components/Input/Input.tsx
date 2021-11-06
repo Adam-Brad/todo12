@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setAddTodo } from 'redux/listSlice';
 
 const Input = () => {
@@ -17,7 +17,10 @@ const Input = () => {
         onChange={(event) => setTask(event.target.value)}
         value={task}
       />
-      <button onClick={handleAddToList}>Click to add</button>
+      <button
+        onClick={handleAddToList}
+        data-testid="add-button"
+      >Click to add</button>
     </>
   );
 }
