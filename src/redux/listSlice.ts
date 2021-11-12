@@ -18,11 +18,14 @@ const listSlice = createSlice({
       }
       state.list = [...state.list, todoToAdd];
     },
-
+    setDeleteTodo(state, action) {
+      const listAfterDelete = state.list.filter(todo => todo.id !== action.payload);
+      state.list = [...listAfterDelete];
+    }
   }
 });
 
-export const {setAddTodo} = listSlice.actions;
+export const {setAddTodo, setDeleteTodo} = listSlice.actions;
 
 export default listSlice.reducer;
 
