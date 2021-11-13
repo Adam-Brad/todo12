@@ -16,6 +16,7 @@ const Input = () => {
       <input
         onChange={(event) => setTask(event.target.value)}
         value={task}
+        data-testid="input"
       />
       <button
         onClick={handleAddToList}

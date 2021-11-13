@@ -11,7 +11,7 @@ const DeleteButton = ({todo}: Props) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch(setDeleteTodo(todo.id))
+    dispatch(setDeleteTodo(todo.id));
   }
 
   return (
