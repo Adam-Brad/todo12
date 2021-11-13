@@ -6,8 +6,9 @@ const DeleteAllCompletedButton = () => {
   const dispatch = useDispatch();
 
   const handleDeleteCompleted = () => {
-    dispatch(setDeleteAllCompleted)
+    dispatch(setDeleteAllCompleted());
   }
+
   return (
     <button
       onClick={handleDeleteCompleted}

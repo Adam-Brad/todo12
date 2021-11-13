@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import StoreState from "../types/StoreState";
 import { v4 as uuidv4 } from 'uuid';
+import Todo from "../types/Todo";
 
 const initialState: StoreState = {
   list: []
+}
+
+interface EditTodoAction {
+  type: string;
+  payload: Todo;
 }
 
 const listSlice = createSlice({
@@ -30,7 +36,7 @@ const listSlice = createSlice({
       });
       state.list = [...listAfterToggle];
     },
-    setEditTodo(state, action) {
+    setEditTodo(state, action: EditTodoAction) {
       const listAfterEdit = state.list.map(todo => {
         if (todo.id === action.payload.id) {
           todo.text = action.payload.text;
@@ -40,13 +46,7 @@ const listSlice = createSlice({
       state.list = [...listAfterEdit];
     },
     setDeleteAllCompleted(state) {
-      const listAfterDeleteAllCompleted = state.list.filter(todo => {
-        if (!todo.isCompleted) {
-          return todo;
-        }
-      });
-      console.log(listAfterDeleteAllCompleted)
-      state.list = [...listAfterDeleteAllCompleted];
+      state.list = [...state.list.filter(todo => !todo.isCompleted)];
     }
   }
 });

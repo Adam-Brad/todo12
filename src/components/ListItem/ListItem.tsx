@@ -39,10 +39,10 @@ const ListItem = ({todo}: Props) => {
             handleSave={handleSave}
           />
         :
-          <>
+          <div data-testid={`${todo.text}-list-item`}>
             <ItemText todo={todo} />
             <button onClick={toggleEditable}>Click to edit</button>
-          </>
+          </div>
       }
       <DeleteButton todo={todo} />
       <ToggleCompleteButton todo={todo} />
